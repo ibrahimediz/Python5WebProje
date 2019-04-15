@@ -2,7 +2,7 @@
 {% extends 'EdizBlog/base.html' %}
 {% block content %}
            
-    {% for post in Posts %}
+
         <div class="post">
             <div class="date">
                 <p>Yayımlanma: {{ post.yayim_zamani }}</p>
@@ -10,6 +10,6 @@
             <h1><a href="{% url 'post_detay' pk=post.pk %}">{{ post.baslik }}</a></h1>
             <p>{{ post.yazi|linebreaksbr }}</p>
         </div>
-    {% endfor %} 
+
 
 {% endblock %}
