@@ -1,0 +1,29 @@
+{% load static %}
+<html>
+<head>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'benim.css' %}">
+</head>
+<body>
+<div>
+    <h1><a href="/">Ediz Blog</a></h1>
+</div>
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+        {% for post in Posts %}
+    <div class="post">
+    <div class="date">
+        <p>Yayımlanma: {{ post.yayim_zamani }}</p>
+    </div>
+        <h1><a href="">{{ post.baslik }}</a></h1>
+        <p>{{ post.yazi|linebreaksbr }}</p>
+    </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+</body>
+</html>
